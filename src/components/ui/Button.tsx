@@ -41,20 +41,34 @@ type CommonProps = {
   children: ReactNode;
 };
 
+/** Event handler props whose native DOM signatures conflict with framer-motion's
+ *  own (differently-typed) versions of the same prop names. These must be
+ *  omitted from the native prop types before intersecting with motion props. */
+type MotionConflictingProps =
+  | "onDrag"
+  | "onDragStart"
+  | "onDragEnd"
+  | "onAnimationStart"
+  | "onAnimationEnd"
+  | "onAnimationIteration";
+
 /** Internal navigation, e.g. <Button to="/pricing">View Pricing</Button> */
 type InternalLinkProps = CommonProps &
-  Omit<LinkProps, "className"> & { to: LinkProps["to"]; href?: undefined };
+  Omit<LinkProps, "className" | MotionConflictingProps> & {
+    to: LinkProps["to"];
+    href?: undefined;
+  };
 
 /** External link (always opens in a new tab), e.g. Book Now -> Google Form */
 type ExternalLinkProps = CommonProps &
-  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "className"> & {
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "className" | MotionConflictingProps> & {
     href: string;
     to?: undefined;
   };
 
 /** Native button, e.g. form submits or accordion toggles */
 type NativeButtonProps = CommonProps &
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className"> & {
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | MotionConflictingProps> & {
     to?: undefined;
     href?: undefined;
   };
@@ -105,7 +119,7 @@ export const Button = forwardRef<
       {...tap}
       ref={ref as Ref<HTMLButtonElement>}
       className={cls}
-      {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)}
+      {...(rest as Omit<NativeButtonProps, keyof CommonProps | "to" | "href">)}
     >
       {children}
     </MotionButton>
