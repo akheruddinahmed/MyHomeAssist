@@ -28,6 +28,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -35,6 +36,7 @@
     color: var(--color-ink);
     background-color: var(--color-surface);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   h1,
