@@ -171,12 +171,14 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Floating badge overlapping the card corner */}
+          {/* Floating badge — sits above the card's top edge, not to its
+              side, so it never depends on extra horizontal space that
+              doesn't exist once the card goes full-width on mobile */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.3, type: "spring", stiffness: 300, damping: 18 }}
-            className="absolute -left-4 top-4 flex items-center gap-1.5 rounded-full border border-border bg-white px-3 py-1.5 shadow-md md:-left-8"
+            className="absolute -top-4 left-4 flex items-center gap-1.5 rounded-full border border-border bg-white px-3 py-1.5 shadow-md md:left-6"
           >
             <ShieldCheck size={14} className="text-primary" />
             <span className="font-heading text-xs font-semibold text-ink">
