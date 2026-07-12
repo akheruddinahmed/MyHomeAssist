@@ -10,15 +10,19 @@ export type Benefit = {
 export type PricingPlan = {
   id: string;
   label: string;
-  /** Numeric price in INR, or null when the plan is quote-based (e.g. 4 BHK+) */
-  price: number | null;
-  /** Shown instead of a numeric price when `price` is null, e.g. "Custom Quote" */
-  priceLabel?: string;
+  price: number;
+  /** This specific tier's Google Form — every tier now has its own,
+   * since pricing depends on both property type and size. */
+  formUrl: string;
   inclusions: string[];
   featured?: boolean;
   ctaLabel: string;
-  /** true routes the CTA to WhatsApp instead of the booking form (used for custom quotes) */
-  ctaViaWhatsApp?: boolean;
+};
+
+export type PricingCategory = {
+  id: string;
+  title: string;
+  plans: PricingPlan[];
 };
 
 export type FaqItem = {
