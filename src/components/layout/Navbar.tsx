@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { NAV_LINKS, SITE, BOOKING_FORM_URL } from "@/config/site";
+import { NAV_LINKS, SITE } from "@/config/site";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,7 +66,7 @@ export function Navbar() {
           </ul>
 
           <div className="hidden md:block">
-            <Button href={BOOKING_FORM_URL} size="md">
+            <Button to="/pricing" size="md">
               Book Now
             </Button>
           </div>
@@ -115,7 +115,7 @@ export function Navbar() {
                 ))}
               </ul>
               <div className="pb-6">
-                <Button href={BOOKING_FORM_URL} size="lg" className="w-full">
+                <Button to="/pricing" size="lg" className="w-full">
                   Book Now
                 </Button>
               </div>
