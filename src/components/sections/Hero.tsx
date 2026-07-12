@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { BOOKING_FORM_URL } from "@/config/site";
 
 const TRUST_BADGES = [
   { icon: ShieldCheck, label: "Verified Professionals" },
@@ -85,7 +84,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-8 flex flex-wrap gap-4"
           >
-            <Button href={BOOKING_FORM_URL} size="lg">
+            <Button to="/pricing" size="lg">
               Book Now
             </Button>
             <Button to="/pricing" variant="secondary" size="lg">
