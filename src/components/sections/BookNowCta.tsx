@@ -1,7 +1,7 @@
 import { Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { BOOKING_FORM_URL, CONTACT } from "@/config/site";
+import { CONTACT } from "@/config/site";
 
 export function BookNowCta() {
   return (
@@ -15,7 +15,7 @@ export function BookNowCta() {
           you'd rather talk it through first.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
-          <Button href={BOOKING_FORM_URL} variant="secondary" size="lg">
+          <Button to="/pricing" variant="secondary" size="lg">
             Book Now
           </Button>
           <a
