@@ -6,16 +6,15 @@ import { NotIncluded } from "@/components/sections/NotIncluded";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { OurEquipment } from "@/components/sections/OurEquipment";
 import { BookNowCta } from "@/components/sections/BookNowCta";
-import { BOOKING_FORM_URL } from "@/config/site";
 import { useDocumentMeta } from "@/hooks/useDocumentMeta";
 import { useJsonLd } from "@/hooks/useJsonLd";
 import { PAGE_META } from "@/config/seo";
 import { buildServiceSchema } from "@/data/structuredData";
-import { PRICING_PLANS } from "@/data/pricing";
+import { PRICING_CATEGORIES } from "@/data/pricing";
 
 export function Component() {
   useDocumentMeta(PAGE_META.homeDeepCleaning);
-  useJsonLd(buildServiceSchema(PRICING_PLANS));
+  useJsonLd(buildServiceSchema(PRICING_CATEGORIES));
 
   return (
     <>
@@ -31,7 +30,7 @@ export function Component() {
           every visit, against the same checklist.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <Button href={BOOKING_FORM_URL} size="lg">
+          <Button to="/pricing" size="lg">
             Book Now
           </Button>
           <Button to="/pricing" variant="secondary" size="lg">
