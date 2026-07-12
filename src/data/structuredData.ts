@@ -1,4 +1,4 @@
-import type { FaqItem, PricingPlan } from "@/types";
+import type { FaqItem, PricingCategory } from "@/types";
 import { SITE_URL } from "@/config/site";
 
 export function buildFaqSchema(faqs: FaqItem[]) {
@@ -16,7 +16,7 @@ export function buildFaqSchema(faqs: FaqItem[]) {
   };
 }
 
-export function buildServiceSchema(plans: PricingPlan[]) {
+export function buildServiceSchema(categories: PricingCategory[]) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -31,13 +31,13 @@ export function buildServiceSchema(plans: PricingPlan[]) {
       "@type": "LocalBusiness",
       name: "MyHouseAssist",
     },
-    offers: plans
-      .filter((plan) => plan.price !== null)
-      .map((plan) => ({
+    offers: categories.flatMap((category) =>
+      category.plans.map((plan) => ({
         "@type": "Offer",
-        name: `${plan.label} Home Deep Cleaning`,
+        name: `${category.title} — ${plan.label} Home Deep Cleaning`,
         priceCurrency: "INR",
         price: plan.price,
-      })),
+      }))
+    ),
   };
 }
