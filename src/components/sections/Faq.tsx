@@ -6,6 +6,7 @@ export function Faq() {
   return (
     <Section
       id="faq"
+      background="surface"
       eyebrow="FAQ"
       title="Frequently asked questions"
       subtitle="Everything you need to know before booking."
