@@ -20,7 +20,7 @@ export function Component() {
       <PricingSection />
       <HowItWorks />
       <CleaningChecklist />
-      <Gallery />
+      {/* <Gallery /> */}
       {/* Reviews section removed for now — no real customer reviews yet.
           Component and data file are still in the codebase (unused), ready
           to re-add as <Reviews /> once you have real feedback to show. */}
