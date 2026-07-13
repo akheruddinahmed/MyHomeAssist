@@ -63,7 +63,7 @@ export const PRICING_CATEGORIES: PricingCategory[] = [
       {
         id: "apt-5bhk",
         label: "5 BHK",
-        price: 4499,
+        price: 5499,
         formUrl: "https://forms.gle/6QJoG74hCfRnsUeE8",
         inclusions: [
           "5 Bedrooms + Living & Dining",
