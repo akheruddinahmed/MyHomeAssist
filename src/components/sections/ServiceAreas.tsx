@@ -6,7 +6,6 @@ export function ServiceAreas() {
   return (
     <Section
       id="service-areas"
-      background="surface"
       eyebrow="Coverage"
       title="Areas we serve in Bangalore"
       subtitle="Currently live across these localities — more added as we grow."
