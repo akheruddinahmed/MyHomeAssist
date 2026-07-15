@@ -31,6 +31,12 @@ export const PAGE_META: Record<string, PageMeta> = {
       "See exactly what's included in our room-by-room home deep cleaning checklist — living room, bedrooms, kitchen, bathrooms, and balcony.",
     path: "/home-deep-cleaning",
   },
+  bathroomCleaning: {
+    title: "Bathroom Cleaning Services in Bangalore | MyHouseAssist",
+    description:
+      "Focused bathroom deep cleaning in Bangalore starting at ₹499 — hard water stain removal, grout scrubbing, fixtures, and more.",
+    path: "/bathroom-cleaning",
+  },
   pricing: {
     title: "Pricing | MyHouseAssist Home Deep Cleaning",
     description:
