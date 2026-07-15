@@ -21,6 +21,10 @@ export const router = createBrowserRouter([
         lazy: () => import("@/pages/HomeDeepCleaning"),
       },
       {
+        path: "bathroom-cleaning",
+        lazy: () => import("@/pages/BathroomCleaning"),
+      },
+      {
         path: "pricing",
         lazy: () => import("@/pages/Pricing"),
       },
