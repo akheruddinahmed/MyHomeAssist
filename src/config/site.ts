@@ -27,7 +27,10 @@ export const CONTACT = {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248815.91022406868!2d77.45716014576104!3d12.98792508883164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1783679848835!5m2!1sen!2sin",
 } as const;
 
-export const BOOKING_FORM_URL = "https://forms.gle/sUTnwphMAucDw9Q99";
+// NOTE: there is no single universal booking form anymore — pricing (and
+// the Google Form to book) now depends on property type and size. Each
+// tier's specific form lives in src/data/pricing.ts. Generic "Book Now"
+// buttons sitewide link to /pricing so people pick their tier first.
 
 export type NavLink = {
   label: string;
@@ -37,6 +40,7 @@ export type NavLink = {
 export const NAV_LINKS: NavLink[] = [
   { label: "Home", path: "/" },
   { label: "Deep Cleaning", path: "/home-deep-cleaning" },
+  { label: "Bathroom Cleaning", path: "/bathroom-cleaning" },
   { label: "Pricing", path: "/pricing" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
