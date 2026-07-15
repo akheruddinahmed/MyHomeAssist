@@ -46,7 +46,7 @@ export function Navbar() {
           </RouterNavLink>
 
           {/* Desktop nav */}
-          <ul className="hidden items-center gap-8 md:flex">
+          <ul className="hidden items-center gap-6 md:flex lg:gap-8">
             {NAV_LINKS.map((link) => (
               <li key={link.path}>
                 <RouterNavLink
